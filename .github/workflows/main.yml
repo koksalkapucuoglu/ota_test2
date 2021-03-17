@@ -28,9 +28,6 @@ jobs:
         
       - name: Set property string value in a json file
         uses: benday-inc/set-property-value-in-appsettings@v1.1
-
-      - name: Edit property string value in update.json
-        uses: koksalkapucuoglu/ota_test2@master
         with:
           pathtosettingsfile: 'update.json'
           keyname1: 'version'
