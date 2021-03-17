@@ -9,7 +9,9 @@ on:
     branches: 
     - master 
     
-    
+env:
+  GITHUB_TOKEN:  512270cee836bcba08b69c94ff317da18fe20622
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -20,15 +22,29 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Update my-file.json description
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+      - uses: actions/checkout@v2
+    
+      - name: Update version parameter in json file 
         uses: koksalkapucuoglu/ota_test2@v1
         with:
           file: update.json
           field: version
           value: my custom data
     
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "update version"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: 512270cee836bcba08b69c94ff317da18fe20622
+          tags: true   
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
