@@ -25,8 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out repository
         uses: actions/checkout@v2
-      
-      - uses: koksalkapucuoglu/ota_test2@master
         with:
           file: update.json
           field: version
