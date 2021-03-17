@@ -43,7 +43,7 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ${{ github.event.head_commit.message }}
+        run: echo "${{ github.event.head_commit.message }}"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
