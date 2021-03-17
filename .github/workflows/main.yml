@@ -42,8 +42,15 @@ jobs:
           git push
       
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Print commit message
         run: echo "${{ github.event.head_commit.message }}"
+        
+      - name: Set version using commit message
+        uses: jossef/action-set-json-field@v1
+        with:
+          file: 'update.json'
+          field: 'version'
+          value: '${{ github.event.head_commit.message }}'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
