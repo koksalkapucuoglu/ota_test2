@@ -36,8 +36,8 @@ jobs:
     
       - name: Commit files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "koksalkapucuoglu@hotmail.com
+          git config --local user.name "koksalkapucuoglu"
           git add -A
           git commit -m "update version"
           
