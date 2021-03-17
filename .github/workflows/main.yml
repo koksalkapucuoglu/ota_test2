@@ -25,13 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out repository
         uses: actions/checkout@v2
-        
-      - name: Set property string value in a json file
-        uses: jossef/action-set-json-field@v1
-        with:
-          file: 'update.json'
-          field: 'version'
-          value: '3.0'
           
       - run: |
           date > generated.txt
