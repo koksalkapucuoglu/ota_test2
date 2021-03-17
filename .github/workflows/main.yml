@@ -31,7 +31,7 @@ jobs:
         with:
           file: 'update.json'
           field: 'version'
-          value: '2.0'
+          value: '3.0'
           
       - run: |
           date > generated.txt
