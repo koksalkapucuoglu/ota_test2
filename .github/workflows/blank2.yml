@@ -31,7 +31,7 @@ jobs:
         
       - uses: lots0logs/gh-action-get-changed-files@2.1.4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: '512270cee836bcba08b69c94ff317da18fe20622'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
