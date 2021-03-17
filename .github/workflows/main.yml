@@ -25,10 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out repository
         uses: actions/checkout@v2
+        
+      - name: Edit property string value in update.json
+        uses: koksalkapucuoglu/ota_test2@master
         with:
-          file: update.json
-          field: version
-          value: v0-test
+          pathtosettingsfile: 'update.json'
+          keyname1: 'version'
+          valuetoset: 'v0-test'
+          
       - run: |
           date > generated.txt
           git config user.name github-actions
