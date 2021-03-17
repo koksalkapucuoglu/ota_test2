@@ -6,8 +6,9 @@ name: Github Action Example
 on: 
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: 
-    - master 
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
     
 env:
   GITHUB_TOKEN:  512270cee836bcba08b69c94ff317da18fe20622
