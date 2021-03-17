@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Update package.json version
-      - uses: actions/download-artifact@v1
+      - uses: actions/upload-artifact@v1
         with:
           file: update.json
           field: version
