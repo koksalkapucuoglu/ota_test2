@@ -14,12 +14,19 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build1:
-    name: Edit Txt File
+    name: Edit
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Update my-file.json description
+        uses: koksalkapucuoglu/ota_test2@v1
+        with:
+          file: update.json
+          field: version
+          value: my custom data
+    
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
