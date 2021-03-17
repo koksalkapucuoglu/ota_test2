@@ -26,7 +26,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       
-      - uses: koksalkapucuoglu/ota_test2@vv1
+      - uses: koksalkapucuoglu/ota_test2@v2
         with:
           file: update.json
           field: version
