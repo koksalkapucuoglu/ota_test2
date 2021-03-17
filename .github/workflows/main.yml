@@ -27,11 +27,11 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Set property string value in a json file
-        uses: benday-inc/set-property-value-in-appsettings@v1.1
+        uses: jossef/action-set-json-field@v1
         with:
-          pathtosettingsfile: 'update.json'
-          keyname1: 'version'
-          valuetoset: 'v0-test'
+          file: 'update.json'
+          field: 'version'
+          value: '2.0'
           
       - run: |
           date > generated.txt
