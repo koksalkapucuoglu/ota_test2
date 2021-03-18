@@ -27,13 +27,24 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
         
+      - name: Convert commit message title to float
+        run: |
+          import os 
+          import json
+          import urllib
+
+          string_commit_title = ${{ github.event.head_commit.message }}
+          float_commit_title = float(string_commit_title)
+          print(float_commit_title)
+        shell: python
+        
       # change version at update.json file
       - name: Set version using commit message
         uses: jossef/action-set-json-field@v1
         with:
           file: 'update.json'
           field: 'version'
-          value:  "${{ github.event.head_commit.message }}"
+          value:  ${{float_commit_title}}
           
       - run: |
           date > generated.txt
