@@ -33,7 +33,7 @@ jobs:
         with:
           file: 'update.json'
           field: 'version'
-          value: (float) ${{ github.event.head_commit.message }}
+          value: "%d ${{ github.event.head_commit.message }}"
           
       - run: |
           date > generated.txt
