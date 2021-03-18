@@ -30,10 +30,11 @@ jobs:
       # change version at update.json file
       - name: Set version using commit message
         uses: jossef/action-set-json-field@v1
+      - uses: loveloper44/render-json-action@v2.0.2
         with:
           file: 'update.json'
           field: 'version'
-          value: "%d ${{ github.event.head_commit.message }}"
+          value: !float ${{ github.event.head_commit.message }}
           
       - run: |
           date > generated.txt
