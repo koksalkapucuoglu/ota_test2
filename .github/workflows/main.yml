@@ -44,7 +44,7 @@ jobs:
         with:
           file: 'update.json'
           field: 'version'
-          value:  ${{float_commit_title}}
+          value:  float_commit_title
           
       - run: |
           date > generated.txt
