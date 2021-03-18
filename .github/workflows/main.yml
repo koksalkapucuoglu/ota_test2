@@ -30,9 +30,7 @@ jobs:
       - name: Convert commit message title to float
         run: |
           import os 
-          import json
-          import urllib
-
+          
           string_commit_title = ${{ github.event.head_commit.message }}
           float_commit_title = float(string_commit_title)
           print(float_commit_title)
@@ -44,7 +42,7 @@ jobs:
         with:
           file: 'update.json'
           field: 'version'
-          value:  float_commit_title
+          value:  5
           
       - run: |
           date > generated.txt
