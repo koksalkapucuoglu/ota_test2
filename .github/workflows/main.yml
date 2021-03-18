@@ -42,7 +42,7 @@ jobs:
         with:
           file: 'update.json'
           field: 'version'
-          value:  5
+          value:  ${{ github.event.head_commit.message }}
           
       - run: |
           date > generated.txt
